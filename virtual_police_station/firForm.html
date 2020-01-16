@@ -7,12 +7,15 @@
   box-sizing: border-box;
 }
 
-input[type=text],input[type=number],input[type=date], select, textarea {
+input[type=text],input[type=number],input[type=date],input[type=datetime-local], select, textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
+}
+input[type=date],input[type=datetime-local]{
+    resize: none;
 }
 
 label {
@@ -74,8 +77,8 @@ input[type=submit]:hover {
 </head>
 <body>
 
-    <h2>Responsive Form</h2>
-    <p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p>
+    <h2>FIR Form</h2>
+    <p></p>
 
     <div class="container">
         <h2>Victem Details</h2>
@@ -96,6 +99,16 @@ input[type=submit]:hover {
                     <input type="text" id="fname" name="fname" placeholder="Enter Father's Name">
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="p-no">Phone number</label>
+                </div>
+                <div class="col-75">
+                        <input type="number" id="p-no" name="p-no" placeholder="Enter Phone Number">
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-25">
                     <label for="address">Address</label>
@@ -126,22 +139,30 @@ input[type=submit]:hover {
 
 
     <div class="container">  
-        <h2>Crime Details</h2>     
-            <div class="row">
-                <div class="col-25">
-                    <label for="offence">Type of offence</label>
-                </div>
-                <div class="col-75">
-                    <select id="offence" name="offence">
-                    <option value="semple 1 ">semple 1</option>
-                    <option value="semple 2">semple 2</option>
-                    <option value="semple 3">semple 3</option>
-                    </select>
-                </div>
+        <h2>Crime Details</h2>
+        <div class="row">
+            <div class="col-25">
+                <label for="time-of-occurence">Time Of Occurence</label>
             </div>
+            <div class="col-75">
+                <input type="datetime-local" id="time-of-occurence" name="time-of-occurence">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="offence">Type of offence</label>
+            </div>
+            <div class="col-75">
+                <select id="offence" name="offence">
+                <option value="semple 1 ">semple 1</option>
+                <option value="semple 2">semple 2</option>
+                <option value="semple 3">semple 3</option>
+                </select>
+            </div>
+        </div>
             <div class="row">
                 <div class="col-25">
-                    <label for="criminal-details">Driminal Details</label>
+                    <label for="criminal-details">Criminal Details</label>
                 </div>
                 <div class="col-75">
                     <textarea id="criminal-details" name="criminal-details" placeholder="Enter Criminal details" style="height:200px"></textarea>
